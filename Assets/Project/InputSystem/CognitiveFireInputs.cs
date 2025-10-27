@@ -1,3 +1,5 @@
+/* Note: We took this script from the Unity Standard Assets package and modified it to fit our needs. 
+ */
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;

@@ -1,13 +1,12 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
-using CognitiveFire;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
-namespace CognitiveFire
+namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM 
@@ -104,7 +103,7 @@ namespace CognitiveFire
 #endif
         private Animator _animator;
         private CharacterController _controller;
-        private CognitiveFireInputs _input;
+        private StarterAssetsInputs _input;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -136,10 +135,10 @@ namespace CognitiveFire
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
-            _input = GetComponent<CognitiveFireInputs>();
+            _input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
