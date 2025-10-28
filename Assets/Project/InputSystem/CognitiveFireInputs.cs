@@ -16,6 +16,8 @@ namespace CognitiveFire
 		public bool sprint;
 		public bool aim;
 
+		public bool shoot;
+
         [Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -50,6 +52,10 @@ namespace CognitiveFire
 		{
 			AimInput(value.isPressed);
 		}
+		public void OnShoot(InputValue value)
+		{
+			ShootInput(value.isPressed);
+		}
 #endif
 
 
@@ -76,6 +82,10 @@ namespace CognitiveFire
 		public void AimInput(bool newAimState)
 		{
 			aim = newAimState;
+		}
+		public void ShootInput(bool newShootState)
+		{
+			shoot = newShootState;
 		}
 
         private void OnApplicationFocus(bool hasFocus)
