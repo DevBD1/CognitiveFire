@@ -10,6 +10,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera shooterCamera;
     [SerializeField] private GameObject crossair;
     [SerializeField] private float normalSensitivity;
+
     [SerializeField] private float aimingSensitivity;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
