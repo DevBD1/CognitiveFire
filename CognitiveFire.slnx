@@ -1,3 +1,6 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="OccaSoftware.Ballistics.Runtime.csproj" />
+  <Project Path="OccaSoftware.Ballistics.Demo.csproj" />
+  <Project Path="OccaSoftware.Ballistics.Editor.csproj" />
 </Solution>
