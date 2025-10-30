@@ -920,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 7066451302414582751, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
       propertyPath: bpj
       value: 
-      objectReference: {fileID: 8210261181187131408, guid: 06ad81233eef0f64eba3c1b6a0bac944, type: 3}
+      objectReference: {fileID: 380611056441782464, guid: 9150be5264d5e29478e512a690707005, type: 3}
     - target: {fileID: 7066451302414582751, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
       propertyPath: sbp
       value: 

@@ -72,6 +72,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetSensitivity(aimingSensitivity);
             crossair.SetActive(true); // Show crossair when aiming
             thirdPersonController.SetRotateOnMove(false);
+
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime*10f));
 
             Vector3 worldAimTarget = mouseWorldPosition;
@@ -87,32 +88,36 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetSensitivity(normalSensitivity);
             crossair.SetActive(false); // Hide crossair when not aiming
             thirdPersonController.SetRotateOnMove(true);
+
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),0f,Time.deltaTime*10f));
         }
 
         if (cognitiveFireInputs.shoot)
         {
             // --- Raycast Mode ---
-            if (hitTransform != null)
+            if (shootingMode == ShootingMode.Raycast)
             {
-                Debug.Log($"Ray hit {hitTransform.name}");
-                Vector3 hitPoint = raycastHit.point;
-                Quaternion hitRot = Quaternion.LookRotation(raycastHit.normal);
+                if (hitTransform != null)
+                {
+                    Debug.Log($"Ray hit {hitTransform.name}");
+                    Vector3 hitPoint = raycastHit.point;
+                    Quaternion hitRot = Quaternion.LookRotation(raycastHit.normal);
 
-                if (hitTransform.GetComponent<BulletTarget>() != null)
-                {
-                    // Target hit program logic
-                    Instantiate(vfxHitG, hitPoint, hitRot);
-                }
-                else
-                {
-                    // Non-target hit program logic
-                    Instantiate(vfxHitR, hitPoint, hitRot);
+                    if (hitTransform.GetComponent<BulletTarget>() != null)
+                    {
+                        // Target hit program logic
+                        Instantiate(vfxHitG, hitPoint, hitRot);
+                    }
+                    else
+                    {
+                        // Non-target hit program logic
+                        Instantiate(vfxHitR, hitPoint, hitRot);
+                    }
                 }
             }
-            if (shootingMode == ShootingMode.Projectile)
+            // --- Projectile Mode ---
+            else if (shootingMode == ShootingMode.Projectile)
             {
-                // --- Projectile Mode ---
                 Vector3 aimDir = (mouseWorldPosition - sbp.position).normalized;
                 Instantiate(bpj, sbp.position, Quaternion.LookRotation(aimDir, Vector3.up));
             }
