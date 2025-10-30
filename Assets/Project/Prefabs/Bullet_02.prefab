@@ -81,7 +81,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.27, y: 0.055, z: 0.055}
+  m_Size: {x: 0.06, y: 0.06, z: 0.28}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1017629568239958521
 MonoBehaviour:
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ed966374c5c774b8e02c8facbcf351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::bulletprojectile
-  vfxHitG: {fileID: 8829451551789304537, guid: e91fa0fac941e714e8c4d5709097019f, type: 3}
-  vfxHitR: {fileID: 1781949194303238865, guid: e92a0207ed6f749459a3646c2aaf3cd9, type: 3}
+  vfxHitG: {fileID: 7022268795503775813, guid: daeb7147c688cf548873825568abc24e, type: 3}
+  vfxHitR: {fileID: 3548588485384254789, guid: 9859692ad99b30c40b3bb1f41e3a8e99, type: 3}
 --- !u!1 &8089881680302868167
 GameObject:
   m_ObjectHideFlags: 0

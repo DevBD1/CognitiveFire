@@ -1252,6 +1252,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   aim: 0
+  shoot: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -1366,8 +1367,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonShooterController
   shooterCamera: {fileID: 2070925441746177913, guid: d057b7a097017454cae279d0cf37f58a, type: 3}
+  crossair: {fileID: 0}
   normalSensitivity: 1
   aimingSensitivity: 0.5
+  aimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  debugTransform: {fileID: 0}
+  bpj: {fileID: 0}
+  sbp: {fileID: 0}
 --- !u!1 &4562709671121330222
 GameObject:
   m_ObjectHideFlags: 0
