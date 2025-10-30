@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 02b70d816ca7c864d9a9cdfc9e353028
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Demo/Materials/TrailMaterial.mat
+  uploadId: 612550

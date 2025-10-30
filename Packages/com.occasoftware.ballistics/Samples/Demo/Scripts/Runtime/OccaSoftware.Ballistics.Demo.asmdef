@@ -1,0 +1,16 @@
+{
+    "name": "OccaSoftware.Ballistics.Demo",
+    "rootNamespace": "OccaSoftware.Ballistics.Demo",
+    "references": [
+        "GUID:2d08dbe95fd52f348a64008b2ce12fb4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e86eb7ce5b98af748bfcae0065b68092
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/SimulationConfigs/SimulationConfig.asset
+  uploadId: 612550

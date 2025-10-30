@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c2d865c8d6234549948d5bb3b5a8000
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Demo/Prefabs/PS_OnHit.prefab
+  uploadId: 612550

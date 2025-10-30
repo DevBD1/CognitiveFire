@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 89a63b7f4d1afca44a56408b5522e4df
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/Environments/Environment_Earth_StandardHumid.asset
+  uploadId: 612550

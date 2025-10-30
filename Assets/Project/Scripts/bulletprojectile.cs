@@ -21,7 +21,7 @@ public class bulletprojectile : MonoBehaviour
     private void Start()
     {
         float speed = 10f;
-        brigidbody.velocity = transform.forward * speed;
+        brigidbody.linearVelocity = transform.forward * speed;
     }
     private void OnTriggerEnter(Collider other)
     {

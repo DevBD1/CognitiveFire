@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 57de24ad3cc58f24f9f66d0045b17c06
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/Environments/Environment_Earth_StandardDry.asset
+  uploadId: 612550

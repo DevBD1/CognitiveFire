@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bfd09808e9c86144eaad5ef86d05d703
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/Projectiles/Projectile_M855A1.asset
+  uploadId: 612550

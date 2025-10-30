@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2d08dbe95fd52f348a64008b2ce12fb4
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Runtime/OccaSoftware.Ballistics.Runtime.asmdef
+  uploadId: 612550

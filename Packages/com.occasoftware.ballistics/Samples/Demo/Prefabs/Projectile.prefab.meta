@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5bf6e42107e22734faf5ba67098c7628
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Demo/Prefabs/Projectile.prefab
+  uploadId: 612550

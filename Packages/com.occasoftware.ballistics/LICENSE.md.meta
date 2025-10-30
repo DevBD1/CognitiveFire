@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d614f72b73e9819418bff4f6636f12e8
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/LICENSE.md
+  uploadId: 612550

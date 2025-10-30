@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6eed10ed35c451f499d0afdd34bc9d49
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Demo/Prefabs/PS_Trail.prefab
+  uploadId: 612550

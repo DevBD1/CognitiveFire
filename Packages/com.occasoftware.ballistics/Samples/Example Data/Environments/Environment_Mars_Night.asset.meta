@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e87e113192651c45a8164d142af1485
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/Environments/Environment_Mars_Night.asset
+  uploadId: 612550

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d09e1c68cefe2f4409ce403a1a06d19c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220232
+  packageName: 'Ballistics: Simulate Realistic Projectile Physics and Trajectory'
+  packageVersion: 2.0.0
+  assetPath: Packages/com.occasoftware.ballistics/Samples/Example Data/Environments/Environment_Mars_Daytime.asset
+  uploadId: 612550
