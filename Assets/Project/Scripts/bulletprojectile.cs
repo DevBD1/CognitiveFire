@@ -18,20 +18,20 @@ public class BulletProjectile : MonoBehaviour
     }
     private void Start()
     {
-        float speed = 10f;
+        float speed = 40f;
         brigidbody.linearVelocity = transform.forward * speed;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<BulletTarget>() != null)
         {
-            //hittarg
+            // Target hit program logic
             Instantiate(vfxHitG, transform.position, Quaternion.identity);
         }
         else
         {
-            //hitsomelse
-            Instantiate(vfxHitG, transform.position, Quaternion.identity);
+            // Non-target hit program logic
+            Instantiate(vfxHitR, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }
