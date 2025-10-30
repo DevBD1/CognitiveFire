@@ -14,8 +14,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private float aimingSensitivity;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
-    [SerializeField] private Transform bpj;
-    [SerializeField] private Transform sbp;
+    [SerializeField] private Transform bpj; //pfBulletProjectile
+    [SerializeField] private Transform sbp; //spawnBulletPosition
 
     private Animator animator;
 

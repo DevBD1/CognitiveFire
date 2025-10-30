@@ -6,10 +6,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class bulletprojectile : MonoBehaviour
+public class BulletProjectile : MonoBehaviour
 {
-
-
     [SerializeField] private Transform vfxHitG;
     [SerializeField] private Transform vfxHitR;
     private Rigidbody brigidbody;
@@ -25,7 +23,7 @@ public class bulletprojectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<bultar>() != null)
+        if (other.GetComponent<BulletTarget>() != null)
         {
             //hittarg
             Instantiate(vfxHitG, transform.position, Quaternion.identity);

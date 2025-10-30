@@ -15,7 +15,6 @@ namespace CognitiveFire
 		public bool jump;
 		public bool sprint;
 		public bool aim;
-
 		public bool shoot;
 
         [Header("Movement Settings")]
