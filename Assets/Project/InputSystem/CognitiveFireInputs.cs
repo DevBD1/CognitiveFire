@@ -17,6 +17,8 @@ namespace CognitiveFire
 		public bool aim;
 		public bool shoot;
 
+		public bool Crouch;
+
         [Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -55,6 +57,10 @@ namespace CognitiveFire
 		{
 			ShootInput(value.isPressed);
 		}
+		public void OnCrouch(InputValue value)
+		{
+			CrouchInput(value.isPressed);
+		}
 #endif
 
 
@@ -86,6 +92,11 @@ namespace CognitiveFire
 		{
 			shoot = newShootState;
 		}
+		public void CrouchInput(bool newCrouchState)
+		{
+			Crouch= newCrouchState;
+		}
+
 
         private void OnApplicationFocus(bool hasFocus)
 		{

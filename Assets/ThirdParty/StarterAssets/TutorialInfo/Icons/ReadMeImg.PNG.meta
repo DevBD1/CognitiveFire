@@ -100,5 +100,5 @@ AssetOrigin:
   packageName: Starter Assets - ThirdPerson | Updates in new CharacterController
     package
   packageVersion: 1.1.5
-  assetPath: Assets/StarterAssets/TutorialInfo/Icons/ReadMeImg.PNG
+  assetPath: Assets/ThirdParty/StarterAssets/TutorialInfo/Icons/ReadMeImg.PNG
   uploadId: 691128

@@ -1,7 +1,7 @@
 /* Note: We followed Code Monkey's (YouTube) tutorial on implementing a third-person shooter controller with aiming functionality.
  */
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 using CognitiveFire;
 using UnityEngine.InputSystem;
 
@@ -106,12 +106,17 @@ public class ThirdPersonShooterController : MonoBehaviour
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
                         // Target hit program logic
-                        Instantiate(vfxHitG, hitPoint, hitRot);
+                        var go = Instantiate(vfxHitG.gameObject, hitPoint, hitRot);
+                        Destroy(go, 1f);
+
+
+                        
                     }
                     else
                     {
                         // Non-target hit program logic
-                        Instantiate(vfxHitR, hitPoint, hitRot);
+                        var gdo = Instantiate(vfxHitR.gameObject, hitPoint, hitRot);
+                        Destroy(gdo, 1f);
                     }
                 }
             }
