@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: f4ed966374c5c774b8e02c8facbcf351
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vfxHitG: {fileID: 7022268795503775813, guid: daeb7147c688cf548873825568abc24e, type: 3}
+  - vfxHitR: {fileID: 3548588485384254789, guid: 9859692ad99b30c40b3bb1f41e3a8e99, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
