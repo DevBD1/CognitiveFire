@@ -46,7 +46,7 @@ namespace CognitiveFire
 
         [Space(10)]
         [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
-        public float JumpTimeout = 0.50f;
+        public float JumpTimeout = 0f;
 
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
@@ -63,6 +63,10 @@ namespace CognitiveFire
 
         [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
+        [Header("Double Jump")]
+[SerializeField] private bool allowDoubleJump = true;
+[SerializeField] private float doubleJumpHeight = 1.0f;
+private bool hasDoubleJumped = false;
 
         [Header("Cinemachine")]
         [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
@@ -110,6 +114,8 @@ namespace CognitiveFire
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+
+        bool m_DoubleJumpPossible;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -174,8 +180,9 @@ namespace CognitiveFire
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
+
             GroundedCheck();
+            JumpAndGravity();
             Move();
             UpdateControllerColider();
 
@@ -331,6 +338,7 @@ namespace CognitiveFire
         {
             if (Grounded)
             {
+                hasDoubleJumped = false;
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
 
@@ -397,9 +405,21 @@ namespace CognitiveFire
                         _animator.SetBool(_animIDFreeFall, true);
                     }
                 }
+                if (allowDoubleJump && _input.jump && !hasDoubleJumped)
+{
+    
+    hasDoubleJumped = true;
+    _verticalVelocity = Mathf.Sqrt(doubleJumpHeight * -2f * Gravity);
 
-                // if we are not grounded, do not jump
-                _input.jump = false;
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDJump, true);
+                    }
+                    _input.jump = false;
+}
+
+
+                
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)

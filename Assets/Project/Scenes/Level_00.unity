@@ -1189,6 +1189,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4300522801753978277, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      propertyPath: CrouchSpeed
+      value: 2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300522801753978277, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      propertyPath: FallTimeout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300522801753978277, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      propertyPath: JumpTimeout
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918481, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
       propertyPath: m_Name
       value: PlayerHunter
