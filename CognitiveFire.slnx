@@ -1,6 +1,8 @@
 ﻿<Solution>
+  <Project Path="Unity.AI.Navigation.Samples.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="OccaSoftware.Ballistics.Runtime.csproj" />
   <Project Path="OccaSoftware.Ballistics.Demo.csproj" />
   <Project Path="OccaSoftware.Ballistics.Editor.csproj" />
+  <Project Path="Unity.AI.Navigation.Samples.Initialization.Editor.csproj" />
 </Solution>
