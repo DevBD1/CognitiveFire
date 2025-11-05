@@ -1803,7 +1803,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level01Controller
   firstCorridorDoor: {fileID: 636546592}
   windowTrigger: {fileID: 38851648}
-  firstCorridorNPCs: []
+  firstCorridorNPCs:
+  - {fileID: 1976538017}
+  - {fileID: 2072141385}
+  - {fileID: 688939620}
+  - {fileID: 1181783202}
   secondCorridorDoor: {fileID: 492650170}
   keycardForCore: {fileID: 0}
   coreDoor: {fileID: 1565543208}
@@ -2675,7 +2679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163195015}
   m_Layer: 0
-  m_Name: Door_3
+  m_Name: Door3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6559,7 +6563,7 @@ GameObject:
   - component: {fileID: 492650169}
   - component: {fileID: 492650170}
   m_Layer: 9
-  m_Name: Openable
+  m_Name: Openable_Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8863,7 +8867,7 @@ GameObject:
   - component: {fileID: 636546591}
   - component: {fileID: 636546592}
   m_Layer: 9
-  m_Name: Openable
+  m_Name: Openable_Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13171,7 +13175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970565410}
   m_Layer: 0
-  m_Name: Door_2
+  m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15468,6 +15472,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 416390, guid: 8f19e515545d18d469b1f734b0ccf61a, type: 3}
   m_PrefabInstance: {fileID: 1090836657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1091517539 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8944336655422409496, guid: e007c49c2e121674b9255f35516f37a0, type: 3}
+  m_PrefabInstance: {fileID: 323400137}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092802366
 GameObject:
@@ -23378,7 +23387,7 @@ GameObject:
   - component: {fileID: 1565543207}
   - component: {fileID: 1565543208}
   m_Layer: 9
-  m_Name: Openable
+  m_Name: Openable_Door3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23993,7 +24002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601551728}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27974,7 +27983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26a6966f3ea2974f9ce197d16408416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 1091517539}
   interactionDistance: 3
   interactionLayer:
     serializedVersion: 2
