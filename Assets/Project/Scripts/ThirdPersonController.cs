@@ -186,11 +186,11 @@ private bool hasDoubleJumped = false;
             Move();
             UpdateControllerColider();
 
-            if (_input.Crouch)
+            if (_input.crouch)
             {
                 crouched = !crouched;
 
-                _input.Crouch = false;
+                _input.crouch = false;
             }
         }
 

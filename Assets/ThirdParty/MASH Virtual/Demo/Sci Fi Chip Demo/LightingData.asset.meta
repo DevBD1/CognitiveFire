@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a794a389068c47041977f880dc8817f3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162878
+  packageName: Sci Fi Chip
+  packageVersion: 1.0.3
+  assetPath: Assets/MASH Virtual/Demo/Sci Fi Chip Demo/LightingData.asset
+  uploadId: 582513
