@@ -16,8 +16,9 @@ namespace CognitiveFire
 		public bool sprint;
 		public bool aim;
 		public bool shoot;
+		public bool interact;
 
-		public bool Crouch;
+		public bool crouch;
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -61,6 +62,11 @@ namespace CognitiveFire
 		{
 			CrouchInput(value.isPressed);
 		}
+
+		public void OnInteract(InputValue value)
+		{
+			InteractInput(value.isPressed);
+		}
 #endif
 
 
@@ -94,7 +100,12 @@ namespace CognitiveFire
 		}
 		public void CrouchInput(bool newCrouchState)
 		{
-			Crouch= newCrouchState;
+			crouch = newCrouchState;
+		}
+
+		public void InteractInput(bool newInteractState)
+		{
+			interact = newInteractState;
 		}
 
 

@@ -19,6 +19,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (_input.interact)
         {
+            Debug.Log("Interact key pressed.");
             Interact();
             _input.interact = false;
         }
@@ -26,17 +27,24 @@ public class PlayerInteraction : MonoBehaviour
 
     void Interact()
     {
+        Debug.Log("Performing interaction raycast.");
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactionDistance, interactionLayer))
         {
+            Debug.Log("Raycast hit: " + hit.collider.name);
             Door door = hit.collider.GetComponent<Door>();
             if (door != null && levelController != null)
             {
+                Debug.Log("Found Door component.");
                 if (door == levelController.coreDoor)
                 {
                     if (levelController.hasCoreKeycard)
                     {
                         door.OpenDoor();
+                    }
+                    else
+                    {
+                        Debug.Log("Core door requires keycard.");
                     }
                 }
                 else
@@ -48,9 +56,14 @@ public class PlayerInteraction : MonoBehaviour
             Keycard keycard = hit.collider.GetComponent<Keycard>();
             if (keycard != null)
             {
+                Debug.Log("Found Keycard component.");
                 keycard.OnKeycardPickup.Invoke();
                 keycard.gameObject.SetActive(false);
             }
+        }
+        else
+        {
+            Debug.Log("Interaction raycast did not hit anything on the interaction layer.");
         }
     }
 }

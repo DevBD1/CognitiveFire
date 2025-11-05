@@ -23,7 +23,6 @@ public class Level01Controller : MonoBehaviour
     // --- The Core ---
     [Header("The Core")]
     public List<GameObject> coreNPCs;
-    public Keycard finalKeycard;
     public bool hasFinalKeycard = false;
 
     // --- Final Room ---
@@ -43,10 +42,6 @@ public class Level01Controller : MonoBehaviour
         if (keycardForCore != null)
         {
             keycardForCore.OnKeycardPickup.AddListener(PickupCoreKeycard);
-        }
-        if (finalKeycard != null)
-        {
-            finalKeycard.OnKeycardPickup.AddListener(PickupFinalKeycard);
         }
 
         // --- Final Trigger ---
@@ -103,32 +98,15 @@ public class Level01Controller : MonoBehaviour
     {
         hasCoreKeycard = true;
     }
-    
-    void PickupFinalKeycard()
-    {
-        hasFinalKeycard = true;
-    }
-
 
     // --- The Core ---
     void CheckCoreNPCs()
     {
         coreNPCs.RemoveAll(item => item == null);
-        if (coreNPCs.Count == 0)
+        if (coreNPCs.Count == 0 && !hasFinalKeycard)
         {
-            if (finalKeycard != null)
-            {
-                finalKeycard.gameObject.SetActive(true);
-            }
-        }
-    }
-
-    // --- Final Room ---
-    void EnableFinalTrigger()
-    {
-        if (finalTrigger != null)
-        {
-            finalTrigger.gameObject.SetActive(true);
+            hasFinalKeycard = true;
+            Debug.Log("Final Keycard Obtained!");
         }
     }
 
