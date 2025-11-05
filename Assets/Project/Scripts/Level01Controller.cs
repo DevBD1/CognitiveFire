@@ -6,51 +6,47 @@ public class Level01Controller : MonoBehaviour
 {
     // --- Initial Trigger ---
     [Header("Initial Trigger")]
-    public GameObject firstCorridorDoor;
+    public Door firstCorridorDoor;
     public TriggerVolume windowTrigger;
 
     // --- First Corridor ---
     [Header("First Corridor")]
     public List<GameObject> firstCorridorNPCs;
-    public GameObject secondCorridorDoor;
+    public Door secondCorridorDoor;
 
     // --- Second Corridor ---
     [Header("Second Corridor")]
-    public GameObject coreDoor;
+    public Keycard keycardForCore;
+    public Door coreDoor;
+    public bool hasCoreKeycard = false;
 
     // --- The Core ---
     [Header("The Core")]
     public List<GameObject> coreNPCs;
+    public Keycard finalKeycard;
+    public bool hasFinalKeycard = false;
 
     // --- Final Room ---
     [Header("Final Room")]
     public GameObject weapon;
     public TriggerVolume finalTrigger;
 
-    private bool isFirstCorridorDoorOpened = false;
-    private bool isSecondCorridorDoorOpened = false;
-    private bool isCoreDoorOpened = false;
-
     void Start()
     {
         // --- Initial Trigger ---
         if (windowTrigger != null)
         {
-            windowTrigger.OnPlayerEnter.AddListener(OpenFirstCorridorDoor);
+            windowTrigger.OnPlayerEnter.AddListener(UnlockFirstCorridorDoor);
         }
 
-        // --- Doors ---
-        if (firstCorridorDoor != null)
+        // --- Keycards ---
+        if (keycardForCore != null)
         {
-            firstCorridorDoor.SetActive(true);
+            keycardForCore.OnKeycardPickup.AddListener(PickupCoreKeycard);
         }
-        if (secondCorridorDoor != null)
+        if (finalKeycard != null)
         {
-            secondCorridorDoor.SetActive(true);
-        }
-        if (coreDoor != null)
-        {
-            coreDoor.SetActive(true);
+            finalKeycard.OnKeycardPickup.AddListener(PickupFinalKeycard);
         }
 
         // --- Final Trigger ---
@@ -63,25 +59,24 @@ public class Level01Controller : MonoBehaviour
 
     void Update()
     {
-        if (isFirstCorridorDoorOpened && !isSecondCorridorDoorOpened)
+        if (firstCorridorDoor.IsOpen() && !secondCorridorDoor.IsOpen())
         {
             CheckFirstCorridorNPCs();
         }
 
-        if (isCoreDoorOpened)
+        if (coreDoor.IsOpen())
         {
             CheckCoreNPCs();
         }
     }
 
     // --- Initial Trigger ---
-    void OpenFirstCorridorDoor()
+    void UnlockFirstCorridorDoor()
     {
-        if (firstCorridorDoor != null && !isFirstCorridorDoorOpened)
+        if (firstCorridorDoor != null && !firstCorridorDoor.IsOpen())
         {
-            firstCorridorDoor.SetActive(false);
-            isFirstCorridorDoorOpened = true;
-            windowTrigger.OnPlayerEnter.RemoveListener(OpenFirstCorridorDoor);
+            firstCorridorDoor.OpenDoor();
+            windowTrigger.OnPlayerEnter.RemoveListener(UnlockFirstCorridorDoor);
         }
     }
 
@@ -91,26 +86,40 @@ public class Level01Controller : MonoBehaviour
         firstCorridorNPCs.RemoveAll(item => item == null);
         if (firstCorridorNPCs.Count == 0)
         {
-            OpenSecondCorridorDoor();
+            UnlockSecondCorridorDoor();
         }
     }
 
-    void OpenSecondCorridorDoor()
+    void UnlockSecondCorridorDoor()
     {
-        if (secondCorridorDoor != null && !isSecondCorridorDoorOpened)
+        if (secondCorridorDoor != null && !secondCorridorDoor.IsOpen())
         {
-            secondCorridorDoor.SetActive(true);
-            isSecondCorridorDoorOpened = true;
+            secondCorridorDoor.OpenDoor();
         }
     }
 
     // --- Second Corridor ---
-    void OpenCoreDoor()
+    void PickupCoreKeycard()
     {
-        if (coreDoor != null && !isCoreDoorOpened)
+        hasCoreKeycard = true;
+    }
+    
+    void PickupFinalKeycard()
+    {
+        hasFinalKeycard = true;
+    }
+
+
+    // --- The Core ---
+    void CheckCoreNPCs()
+    {
+        coreNPCs.RemoveAll(item => item == null);
+        if (coreNPCs.Count == 0)
         {
-            coreDoor.SetActive(true);
-            isCoreDoorOpened = true;
+            if (finalKeycard != null)
+            {
+                finalKeycard.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -125,6 +134,7 @@ public class Level01Controller : MonoBehaviour
 
     void EndLevel()
     {
+        // TODO: Implement what happens when the player uses the final keycard
         Debug.Log("Level Complete!");
     }
 }
