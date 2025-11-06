@@ -57,7 +57,7 @@ Bu yaklaşım, kodun yeniden kullanılabilirliğini artırır ve geliştirmeyi m
 Bu bölümde, oyunda geliştirilen temel mekanikler ve bu mekaniklerin çalışma prensipleri blok diyagramlar üzerinden anlatılacaktır.
 
 <img width="1235" height="633" alt="blok_diyagram" src="https://github.com/user-attachments/assets/9114eed7-02ba-4af5-8bca-464d084732f5" />
-
+([Gemini AI](https://gemini.google.com/) ve [Mermaid](https://mermaid.live/ ) kullanilarak olusturuldu.)
 ### 3.1. Karakter Kontrolü (Third Person Controller)
 
 - **Açıklama:** Oyuncu karakterinin hareketi, zıplaması ve eğilmesi gibi temel eylemler bu mekanik tarafından yönetilir. Unity'nin `StarterAssets` paketi temel alınarak, üzerine `double-jump` ve `crouch` özellikleri eklenmiştir.
