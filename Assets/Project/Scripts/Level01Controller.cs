@@ -18,6 +18,7 @@ public class Level01Controller : MonoBehaviour
     [Header("Second Corridor")]
     public Keycard keycardForCore;
     public Door coreDoor;
+    public TriggerVolume coreDoorTrigger;
     public bool hasCoreKeycard = false;
 
     // --- The Core ---
@@ -42,6 +43,11 @@ public class Level01Controller : MonoBehaviour
         if (keycardForCore != null)
         {
             keycardForCore.OnKeycardPickup.AddListener(PickupCoreKeycard);
+        }
+
+        if (coreDoorTrigger != null)
+        {
+            coreDoorTrigger.OnPlayerEnter.AddListener(TryOpenCoreDoor);
         }
 
         // --- Final Trigger ---
@@ -97,6 +103,15 @@ public class Level01Controller : MonoBehaviour
     void PickupCoreKeycard()
     {
         hasCoreKeycard = true;
+    }
+
+    void TryOpenCoreDoor()
+    {
+        if (hasCoreKeycard && coreDoor != null && !coreDoor.IsOpen())
+        {
+            coreDoor.OpenDoor();
+            coreDoorTrigger.OnPlayerEnter.RemoveListener(TryOpenCoreDoor);
+        }
     }
 
     // --- The Core ---
