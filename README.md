@@ -2,11 +2,12 @@
 
 **Takım Üyeleri:**
 
-- **Ders:**
+- 251307120 | Mehmet Burak Dorman
+- 231307039 | Sertaç Özdemir
 
-- **Tarih:**
+**Ders:** Yazılım Geliştirme Laboratuvarı-I (Yavuz Selim FATİHOĞLU)
 
-- 06.11.2025
+**Tarih:** 07.11.2025
 
 ---
 
@@ -56,29 +57,24 @@ Bu yaklaşım, kodun yeniden kullanılabilirliğini artırır ve geliştirmeyi m
 
 Bu bölümde, oyunda geliştirilen temel mekanikler ve bu mekaniklerin çalışma prensipleri blok diyagramlar üzerinden anlatılacaktır.
 
+<img width="1235" height="633" alt="blok_diyagram" src="https://github.com/user-attachments/assets/9114eed7-02ba-4af5-8bca-464d084732f5" />
+(Gemini AI ve Mermaid.live kullanilarak olusturuldu.)
+
 ### 3.1. Karakter Kontrolü (Third Person Controller)
 
 - **Açıklama:** Oyuncu karakterinin hareketi, zıplaması ve eğilmesi gibi temel eylemler bu mekanik tarafından yönetilir. Unity'nin `StarterAssets` paketi temel alınarak, üzerine `double-jump` ve `crouch` özellikleri eklenmiştir.
-- **Blok Diyagramı:**
-  _(Karakter kontrol mekanizmasının girdi (Input System), animasyon (Animator) ve fizik (Rigidbody) ile nasıl etkileşime girdiğini gösteren bir diyagram eklenecektir.)_
 
 ### 3.2. Nişan Alma (Aiming)
 
 - **Açıklama:** Oyuncunun nişan almasını sağlayan mekaniktir. Nişan alındığında kamera oyuncuya yaklaşır, bir crosshair belirir ve karakterin dönüşü fare hareketine göre ayarlanır.
-- **Blok Diyagramı:**
-  _(Oyuncu girdisi, kamera kontrolü (Cinemachine), karakter rotasyonu ve arayüz (UI) arasındaki ilişkiyi gösteren bir diyagram eklenecektir.)_
 
 ### 3.3. Ateş Etme (Projectile System)
 
 - **Açıklama:** Silahın ateş etme mekaniğidir. Bu sistem, `Raycast` (ışın çizme) yöntemini kullanır.
-- **Blok Diyagramı:**
-  _(Ateş etme girdisi, mod seçimi, Raycast/Projectile uygulaması ve vuruş tespiti (hit detection) adımlarını gösteren bir diyagram eklenecektir.)_
 
 ### 3.4. Animasyon Yönetimi
 
 - **Açıklama:** Karakterin hareketlerine uygun animasyonların oynatılmasını sağlar. Gelişmiş bir yapı olarak, nişan alırken vücudun üst ve alt kısımları bağımsız hareket eder. Bu sayede oyuncu yürürken aynı anda nişan alıp ateş edebilir.
-- **Blok Diyagramı:**
-  _(Animator Controller, animasyon katmanları (layers), ve karakterin durumlarına (state) göre animasyon geçişlerini gösteren bir diyagram eklenecektir.)_
 
 ---
 

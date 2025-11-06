@@ -1,8 +1,9 @@
 # Proje Raporu: CognitiveFire
 
 **Takım Üyeleri:**
+
 - 251307120 | Mehmet Burak Dorman
-- | 231307039 | Sertaç Özdemir
+- 231307039 | Sertaç Özdemir
 
 **Ders:** Yazılım Geliştirme Laboratuvarı-I (Yavuz Selim FATİHOĞLU)
 
