@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3004f05b13f291c49831b57089640c63
+guid: 23037c33e61f39549867eb514f8e18b5
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 162872
   packageName: Sci Fi Gun
   packageVersion: 1.1.1
-  assetPath: Assets/ThirdParty/MASH Virtual/Sci Fi Chip/Material/Walls.mat
+  assetPath: Assets/MASH Virtual/Sci Fi Gun/Material/Text.mat
   uploadId: 570538
