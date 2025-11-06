@@ -23,8 +23,10 @@ public class BulletProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<BulletTarget>() != null)
+        var target = other.GetComponentInParent<BulletTarget>();
+        if (target!=null)
         {
+            target.TakeDamage(25);
             // Target hit program logic
             Instantiate(vfxHitG, transform.position, Quaternion.identity);
         }
