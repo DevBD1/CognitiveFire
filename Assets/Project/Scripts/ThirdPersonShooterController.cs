@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Cinemachine;
 using CognitiveFire;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public enum ShootingMode
 {
@@ -31,6 +32,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
 
     private Animator animator;
+    private LineRenderer lineRenderer;
 
     private ThirdPersonController thirdPersonController;
     private CognitiveFireInputs cognitiveFireInputs;
@@ -40,6 +42,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         cognitiveFireInputs = GetComponent<CognitiveFireInputs>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         animator = GetComponent<Animator>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -103,6 +106,8 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Vector3 hitPoint = raycastHit.point;
                     Quaternion hitRot = Quaternion.LookRotation(raycastHit.normal);
 
+                    StartCoroutine(ShowLaser(hitPoint));
+
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
                         // Target hit program logic
@@ -128,5 +133,16 @@ public class ThirdPersonShooterController : MonoBehaviour
             }
             cognitiveFireInputs.shoot = false;
         }
+    }
+
+    private IEnumerator ShowLaser(Vector3 hitPoint)
+    {
+        lineRenderer.enabled = true;
+        lineRenderer.SetPosition(0, sbp.position);
+        lineRenderer.SetPosition(1, hitPoint);
+
+        yield return new WaitForSeconds(0.1f);
+
+        lineRenderer.enabled = false;
     }
 }
