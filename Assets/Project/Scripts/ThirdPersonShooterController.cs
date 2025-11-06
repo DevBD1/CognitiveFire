@@ -21,6 +21,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     [SerializeField] private float aimingSensitivity;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+    [SerializeField] private LayerMask hitLayerMask = ~0;
     [SerializeField] private Transform debugTransform;
     [SerializeField] private Transform bpj; //pfBulletProjectile
     [SerializeField] private Transform sbp; //spawnBulletPosition
@@ -59,7 +60,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         //Ray ray = new Ray(sbp.position, Camera.main.transform.forward);
         Transform hitTransform = null;
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, hitLayerMask,QueryTriggerInteraction.Collide))
         {
             debugTransform.position = raycastHit.point;
             //Vector3 aimTarget = raycastHit.point;
