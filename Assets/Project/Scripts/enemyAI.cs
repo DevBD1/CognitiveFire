@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public class enemyAI : MonoBehaviour
@@ -15,7 +16,8 @@ public class enemyAI : MonoBehaviour
     bool walkPointSet;
     public float walkpointRange;
 
-    public float health;
+    public float health, maxhealth;
+    [SerializeField] fhealthjbar healthbar;
 
     //saldiri
     public float timeBetweenAttacks;
@@ -26,12 +28,13 @@ public class enemyAI : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
     private void Start()
     {
-        
+        healthbar.UpgradeHealthBar(health,maxhealth);
     }
     void Awake()
     {
         player = GameObject.Find("PlayerHunter").transform;
         agent = GetComponent<NavMeshAgent>();
+        healthbar = GetComponentInChildren<fhealthjbar>();
 
     }
     private void Update()
@@ -99,6 +102,7 @@ public class enemyAI : MonoBehaviour
     public void TakeDmg(int damage)
     {
         health -= damage;
+        healthbar.UpgradeHealthBar(health,maxhealth);
         if (health <= 0) Invoke(nameof(DestroyEnemy),0.5f);
     }
     private void DestroyEnemy()
