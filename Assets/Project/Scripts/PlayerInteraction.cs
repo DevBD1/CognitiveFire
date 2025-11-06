@@ -3,9 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float interactionDistance = 6f; // 3f 
+    public float interactionDistance = 6f; // 3f
     public LayerMask interactableLayer;
     public Transform interactionSource; // Interaction ray'in cast'lanacagi nokta (player's eyes/chest) spawn bullet position gibi
+    public GameObject interactionPrompt; // UI prompt to show when looking at an interactable
     private Camera mainCamera;
     private GameObject lastLookedAtObject = null;
 
@@ -21,6 +22,10 @@ public class PlayerInteraction : MonoBehaviour
         if (interactionSource == null)
         {
             Debug.LogError("PlayerInteraction: Interaction Source is not assigned. Please assign a Transform (e.g., the player's head) to this field in the Inspector.");
+        }
+        if (interactionPrompt != null)
+        {
+            interactionPrompt.SetActive(false);
         }
     }
 
@@ -73,7 +78,14 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         // Handle interaction logic if we are looking at an object on the correct layer
-        if (currentLookedAtObject != null && (interactableLayer.value & (1 << currentLookedAtObject.layer)) > 0)
+        bool isInteractable = currentLookedAtObject != null && (interactableLayer.value & (1 << currentLookedAtObject.layer)) > 0;
+
+        if (interactionPrompt != null)
+        {
+            interactionPrompt.SetActive(isInteractable);
+        }
+
+        if (isInteractable)
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
