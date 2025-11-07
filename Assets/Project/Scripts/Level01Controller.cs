@@ -31,7 +31,7 @@ public class Level01Controller : MonoBehaviour
     [Header("Final Room")]
     public GameObject weapon;
     public TriggerVolume finalTrigger;
-    public Image endgameImage;
+    public GameObject endgameImage;
 
     void Start()
     {
@@ -56,7 +56,7 @@ public class Level01Controller : MonoBehaviour
         if (finalTrigger != null)
         {
             finalTrigger.OnPlayerEnter.AddListener(EndLevel);
-            finalTrigger.gameObject.SetActive(false);
+            //finalTrigger.gameObject.SetActive(false);
         }
 
         if (endgameImage != null)
