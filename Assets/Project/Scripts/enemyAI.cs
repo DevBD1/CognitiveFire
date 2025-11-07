@@ -15,6 +15,8 @@ public class enemyAI : MonoBehaviour
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkpointRange;
+     [SerializeField] private Transform muzzle;
+
 
     public float health, maxhealth;
     [SerializeField] fhealthjbar healthbar;
@@ -26,6 +28,9 @@ public class enemyAI : MonoBehaviour
     // durum
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+    private Transform owner;
+private Collider myCol;
+
     private void Start()
     {
         healthbar.UpgradeHealthBar(health,maxhealth);
@@ -35,8 +40,11 @@ public class enemyAI : MonoBehaviour
         player = GameObject.Find("PlayerHunter").transform;
         agent = GetComponent<NavMeshAgent>();
         healthbar = GetComponentInChildren<fhealthjbar>();
+        myCol = GetComponent<Collider>();
+
 
     }
+    
     private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -82,10 +90,14 @@ public class enemyAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            var spawnPos = (muzzle ? muzzle.position : transform.position + transform.forward * 0.5f);
             //attackcode
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            var proj = Instantiate(projectile, spawnPos, Quaternion.LookRotation(transform.forward));
+            proj.GetComponent<BulletProjectile>()?.Initialize(transform);
+            Destroy(proj,1f);
+            
+
+            
 
             //
 
