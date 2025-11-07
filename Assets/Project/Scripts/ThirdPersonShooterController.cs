@@ -108,6 +108,9 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Quaternion hitRot = Quaternion.LookRotation(raycastHit.normal);
 
                     StartCoroutine(ShowLaser(hitPoint));
+                    var target = hitTransform.GetComponentInParent<BulletTarget>();
+                    if (target != null) { target.TakeDamage(25); /* vfxHitG */ } else { /* vfxHitR */ }
+
 
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
