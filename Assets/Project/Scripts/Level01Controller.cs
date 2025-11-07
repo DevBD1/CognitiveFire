@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Level01Controller : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Level01Controller : MonoBehaviour
     [Header("Final Room")]
     public GameObject weapon;
     public TriggerVolume finalTrigger;
+    public Image endgameImage;
 
     void Start()
     {
@@ -55,6 +57,11 @@ public class Level01Controller : MonoBehaviour
         {
             finalTrigger.OnPlayerEnter.AddListener(EndLevel);
             finalTrigger.gameObject.SetActive(false);
+        }
+
+        if (endgameImage != null)
+        {
+            endgameImage.gameObject.SetActive(false);
         }
     }
 
@@ -127,7 +134,10 @@ public class Level01Controller : MonoBehaviour
 
     void EndLevel()
     {
-        // TODO: Implement what happens when the player uses the final keycard
+        if (endgameImage != null)
+        {
+            endgameImage.gameObject.SetActive(true);
+        }
         Debug.Log("Level Complete!");
     }
 }
