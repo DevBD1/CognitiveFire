@@ -482,6 +482,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416390, guid: 8f19e515545d18d469b1f734b0ccf61a, type: 3}
   m_PrefabInstance: {fileID: 15355911}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &18814611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6338370336782095625, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+  m_PrefabInstance: {fileID: 895271482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &18814613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18814611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05226d1b59c0daa48bc80db9ea7fef80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletTarget
+  maxHealth: 100
 --- !u!1001 &23595692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12853,6 +12871,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1868295414}
+    - targetCorrespondingSourceObject: {fileID: 2296631801678301287, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682753977}
+    - targetCorrespondingSourceObject: {fileID: 2296631801678301287, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682753976}
+    - targetCorrespondingSourceObject: {fileID: 6338370336782095625, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 18814613}
   m_SourcePrefab: {fileID: 100100000, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
 --- !u!4 &895679097 stripped
 Transform:
@@ -27511,6 +27538,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416390, guid: 8f19e515545d18d469b1f734b0ccf61a, type: 3}
   m_PrefabInstance: {fileID: 1682130288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1682753973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2296631801678301287, guid: e7c404f2c150ace46af77a654a230c96, type: 3}
+  m_PrefabInstance: {fileID: 895271482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1682753976
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682753973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.97841877
+  m_Height: 0.6411221
+  m_Direction: 1
+  m_Center: {x: 0.00010635948, y: 0.02549249, z: 0.8761269}
+--- !u!114 &1682753977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682753973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05226d1b59c0daa48bc80db9ea7fef80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletTarget
+  maxHealth: 100
 --- !u!1001 &1694338225
 PrefabInstance:
   m_ObjectHideFlags: 0
